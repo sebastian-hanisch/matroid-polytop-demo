@@ -1,4 +1,4 @@
-streamlit>=1.51,<1.52  # Pilot 2026-11-04: älteste erlaubte Version (ein Frontend-Bundle statt vieler Chunks)
+streamlit>=1.51,<1.55  # Pilot 2026-11-04: ältere Frontend-Version, die Cloud lässt Chunks von 1.66 hängen
 numpy>=1.26
 scipy>=1.11
 plotly>=5.24
