@@ -268,7 +268,7 @@ def verdict_small(rows) -> tuple[str, str]:
         return "error", f"Bei {bad} Prüfungen gilt eine Aussage nicht. Das darf nicht sein: Rechenfehler."
     return "success", (
         f"Bei allen **{zahl(total)}** Matroiden mit höchstens {rows[-1]['n']} Elementen (beschriftet): Die Ecken des Polytops sind die unabhängigen Mengen, die Kanten des Basenpolytops die Basenaustausche, "
-        f"Greedy löst das LP, das Greedy-Dual ist zulässig und ganzzahlig, die Facetten sind genau x_e ≥ 0 und die zusammenhängenden Flats, und die Trennung stimmt mit der LP-Zulässigkeit überein (**0 Abweichungen**)."
+        f"Greedy löst das LP, das Greedy-Dual ist zulässig und ganzzahlig, die Facetten sind genau x_e ≥ 0 und die zusammenhängenden Flats, und die Trennung stimmt mit der LP-Zulässigkeit überein (**0 Abweichungen**). Greedy, Dual und Trennung sind je Matroid an zwei ganzen Gewichtsvektoren beziehungsweise drei Testpunkten geprüft."
     )
 
 
@@ -296,7 +296,7 @@ def verdict_system(rows) -> tuple[str, str]:
     ganz = sum(r["non_integral"] for r in rows)
     return "info", (
         f"Bei **{zahl(non)}** Nicht-Matroiden (n = {rows[0]['n']} bis {last['n']}) ist das Polytop der Rangungleichungen bei **{zahl(ganz)}** trotzdem ganzzahlig: Ganzzahligkeit allein kennzeichnet Matroide **nicht**. "
-        f"Was bricht, ist Greedy: In der Stichprobe von {last['sample']} Systemen mit {last['n']} Elementen scheitert Greedy bei **{zahl(last['greedy_fail'])}**, das LP liegt über dem besten unabhängigen Wert bei **{zahl(last['lp_gap'])}** "
+        f"Was bricht, ist Greedy: In der Stichprobe von {last['sample']} Systemen mit {last['n']} Elementen scheitert Greedy bei mindestens einem von sechs Gewichtsvektoren bei **{zahl(last['greedy_fail'])}**, das LP liegt über dem besten unabhängigen Wert bei **{zahl(last['lp_gap'])}** "
         f"(gebrochene Ecke)."
     )
 

@@ -101,7 +101,7 @@ def test_small_system_pair_and_series_verdicts():
     assert ev.verdict_small(bad) == ("error", "Bei 1 Prüfungen gilt eine Aussage nicht. Das darf nicht sein: Rechenfehler.")
     srows = ({"n": 4, "systems": 167, "matroids": 68, "matroids_integral": 68, "non": 99, "non_integral": 91, "sample": 99, "greedy_fail": 58, "lp_gap": 4},)
     kind, text = ev.verdict_system(srows)
-    assert kind == "info" and "Bei **99** Nicht-Matroiden (n = 4 bis 4) ist das Polytop der Rangungleichungen bei **91** trotzdem ganzzahlig" in text and "scheitert Greedy bei **58**" in text and "bei **4** (gebrochene Ecke)" in text
+    assert kind == "info" and "Bei **99** Nicht-Matroiden (n = 4 bis 4) ist das Polytop der Rangungleichungen bei **91** trotzdem ganzzahlig" in text and "scheitert Greedy bei mindestens einem von sechs Gewichtsvektoren bei **58**" in text and "bei **4** (gebrochene Ecke)" in text
     assert ev.verdict_system(({**srows[0], "matroids_integral": 67},))[0] == "error"
     prow = ({"n": 3, "pairs": 256, "integral": 256, "common": 256},)
     trow = ({"n": 3, "triples": 4096, "fractional": 6},)

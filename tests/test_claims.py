@@ -48,7 +48,7 @@ def test_all_independence_systems_up_to_five_elements():
         (3, 19, 16, 16, 3, 3), (4, 167, 68, 68, 99, 91), (5, 7580, 406, 406, 7174, 4434)]
     assert [(r["sample"], r["greedy_fail"], r["lp_gap"]) for r in rows] == [(3, 2, 0), (99, 58, 4), (150, 94, 14)]
     for text in ("(alle Systeme mit 3, 4, 5 Elementen: 19, 167, 7 580)", "Nicht-Matroide: 3, 99, **7 174**", "**3, 91, 4 434**",
-                 "scheitert Greedy bei 2 von 3, 58 von 99, 94 von 150", "bei 0, 4, 14"):
+                 "scheitert Greedy bei mindestens einem der sechs Gewichtsvektoren in 2 von 3, 58 von 99, 94 von 150 Systemen", "bei 0, 4, 14"):
         assert text in README, text
 
 
@@ -112,4 +112,4 @@ def test_u23_by_hand_in_the_readme():
 
 def test_plan_sizes_and_k5_costs_in_the_readme():
     assert [get_net("plan", n, 8).m for n in (6, 7, 8)] == [10, 12, 14] and C.K5_COSTS == (2, 3, 0, 1, 3, 2, 2, 3, 3, 0)
-    assert "Kosten 2, 3, 0, 1, 3, 2, 2, 3, 3, 0" in README and "bei 8 gäbe es 16 397 Ungleichungen und 4 716 Wälder" in README
+    assert "Kosten 2, 3, 0, 1, 3, 2, 2, 3, 3, 0" in README and "bei 8 gäbe es 16 397 Ungleichungen und je nach Plan rund 3 900 bis 5 000 Wälder, Plan 8/9: 4 716" in README
