@@ -1,7 +1,6 @@
 # Matroid-Polytop – warum das LP ganzzahlig ist – Streamlit-Demo
 
-<!-- TODO nach dem Deploy: direkt hierher den Live-Link setzen (Leerzeile davor und danach):
-**[→ Demo live ausprobieren](https://sebastianhanisch-matroid-polytop-demo.streamlit.app/)** -->
+**[→ Demo live ausprobieren](https://sebastianhanisch-matroid-polytop-demo.streamlit.app/)**
 
 Zehntes Stück der Reihe **Matroide und Submodularität** (Bereich Kombinatorik) in der „Konzepte“-Reihe für die Website „Sebastian Hanisch – Operations Research und Machine Learning“. Die Demo macht aus dem Matroid einen **Körper**: Die Indikatorvektoren der unabhängigen Mengen spannen das **Unabhängigkeitspolytop** auf, die der Basen das **Basenpolytop**; beschrieben wird es durch die **Rangungleichungen** x(S) ≤ r(S). Seine **Ecken** sind die unabhängigen Mengen (beziehungsweise die Basen), seine **Kanten** (beim Basenpolytop) die Basenaustausche; **Greedy löst das LP** darüber und liefert das **Dual** gratis. Am Leitungsnetz: Der billigste Spannbaum als LP mit der naheliegenden **Schnittformulierung** ist nicht immer ganzzahlig (in der Messreihe hat sie bei 16 von 60 Plänen eine Lücke), mit den Rangungleichungen des Waldes bei keinem der 60 Pläne; ein **Schnittebenenlauf** macht aus der einen die andere.
 
